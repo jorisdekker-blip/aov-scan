@@ -1,0 +1,47 @@
+/* src/app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-blue: #2d2e5b;
+  --secondary-orange: #f77f00;
+  --light-blue: #e0e7ff;
+}
+body {
+  font-family: var(--font-inter), sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  overflow-y: scroll;
+}
+h1, h2, h3 {
+  font-family: var(--font-baloo), sans-serif;
+  font-weight: 600;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.step-card {
+  animation: fadeIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+.radio-option {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.radio-option:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05),
+    0 4px 6px -2px rgba(0, 0, 0, 0.03);
+}
+input[type="radio"]:checked + .radio-option {
+  border-color: var(--primary-blue);
+  background-color: var(--light-blue);
+  box-shadow: 0 0 0 3px rgba(45, 46, 91, 0.3);
+}
+input[type="radio"] {
+  display: none;
+}
+#progressBar {
+  transition: width 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background-color: var(--primary-blue);
+}
