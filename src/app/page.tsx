@@ -7,6 +7,10 @@ import { WizardProvider, useWizard } from '@/context/WizardContext';
 import { StepStart } from '@/components/steps/StepStart';
 // @ts-ignore
 import { StepHebAov } from '@/components/steps/StepHebAov';
+// @ts-ignore
+import { StepEindleeftijd } from '@/components/steps/StepEindleeftijd';
+// @ts-ignore
+import { StepPremie } from '@/components/steps/StepPremie';
 
 function Wizard() {
   // @ts-ignore
@@ -18,6 +22,8 @@ function Wizard() {
     switch (state.currentStep) {
       case 'step-start': return 0;
       case 'step-heb-aov': return 16;
+      case 'step-eindleeftijd': return 33;
+      case 'step-premie': return 50;
       default: return 0;
     }
   };
@@ -35,6 +41,12 @@ function Wizard() {
       case 'step-heb-aov':
         // @ts-ignore
         return <StepHebAov />;
+      case 'step-eindleeftijd':
+        // @ts-ignore
+        return <StepEindleeftijd />;
+      case 'step-premie':
+        // @ts-ignore
+        return <StepPremie />;
       default:
         // @ts-ignore
         return <StepStart />; 
